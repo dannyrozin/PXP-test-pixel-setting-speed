@@ -20,7 +20,6 @@ void ofApp::draw(){
     
     for (int x = 0; x< width;x++){
         for (int y = 0; y< height;y++){
-            for (int i = 0; i< 10;i++){
             unsigned char randomR = ofRandom(255);
             unsigned char randomG = ofRandom(255);
             unsigned char randomB = ofRandom(255);
@@ -28,14 +27,13 @@ void ofApp::draw(){
             ourResultPixels[x*3+y*width*3+1]=randomG;
             ourResultPixels[x*3+y*width*3+2]=randomB;
         }
-        }
     }
     ourResultTexture.loadData(ourResultPixels, width, height, GL_RGB);
     ourResultTexture.draw(0,0);
     ofDrawBitmapString(ofGetFrameRate(), 100, 100);
     
     
-    /*
+    /*  linear setting
      
      for (int i = 0; i< width*height*3;i++){
      unsigned char randomValue = ofRandom(255);
